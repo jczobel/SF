@@ -44,7 +44,7 @@ jobs:
         run: sfdx force:source:push -f
         #run apex test
       - name: Running Apex Tests
-        run: sfdx force:apex:test:run -l RunLocalTests
+        run: sfdx force:apex:test:run -l RunLocalTests -w 5
         # Deleting Scratch orgs
       - name: Deleting Scratch org
         run: sfdx force:org:delete -p
