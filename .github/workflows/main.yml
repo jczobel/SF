@@ -29,11 +29,11 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: sfdx-actions/setup-sfdx@995ab395faa742df5acabb76fbdb6a5a7a5057d0
         uses: sfdx-actions/setup-sfdx@v1
-         with:
+        with:
           # Authorize a Salesforce org using an SFDX auth URL
           sfdx-auth-url: ${{secrets.DEVHUBURL}}
-        - name: Set default DevHub
-          run: sfdx force:org:config:set defaultdevhubusername=jczobel@gmail.sfdxjc
+      - name: Set default DevHub
+        run: sfdx force:org:config:set defaultdevhubusername=jczobel@gmail.sfdxjc
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
