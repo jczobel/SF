@@ -37,7 +37,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create Scratch org
-        run: sfdx force:org:create -a actionsBuild -d 1 -f config/project-scratch-def.json -s
+        run: sfdx force:org:create -a JCactionsBuild -d 1 -f config/project-scratch-def.json
 
       # pushes source
       - name: Pushing Source
