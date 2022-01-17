@@ -36,10 +36,20 @@ jobs:
         run: sfdx force:org:config:set defaultdevhubusername=jczobel@gmail.sfdxjc
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Create Scratch org
+        run: sfdx force:org:create -a actionsBuild -d 30 config/project-scratch-def.json -s
 
-      # Runs a set of commands using the runners shell
+      # pushes source
+      - name: Pushing Source
+        run: sfdx force:source:push -f
+        #run apex test
+      - name: Running Apex Tests
+        run: sfdx force:apex:test:run -l RunLocalTests
+        # Deleting Scratch orgs
+      - name: Deleting Scratch org
+        run: sfdx force:org:delete -p
+        
+      #run multi lines scripts 
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
