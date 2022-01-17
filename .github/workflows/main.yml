@@ -33,7 +33,7 @@ jobs:
           # Authorize a Salesforce org using an SFDX auth URL
           sfdx-auth-url: ${{secrets.DEVHUBURL}}
       - name: Set default DevHub
-        run: sfdx force:org:config:set defaultdevhubusername=jczobel@gmail.sfdxjc
+        run: sfdx force:config:set defaultdevhubusername=jczobel@gmail.sfdxjc
 
       # Runs a single command using the runners shell
       - name: Create Scratch org
