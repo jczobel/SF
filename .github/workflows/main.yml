@@ -37,7 +37,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create Scratch org
-        run: sfdx force:org:create -a actionsBuild -d 30 config/project-scratch-def.json -s
+        run: sfdx force:org:create -a actionsBuild -d 1 -f config/project-scratch-def.json -s
 
       # pushes source
       - name: Pushing Source
@@ -48,7 +48,7 @@ jobs:
         # Deleting Scratch orgs
       - name: Deleting Scratch org
         run: sfdx force:org:delete -p
-        
+
       #run multi lines scripts 
       - name: Run a multi-line script
         run: |
