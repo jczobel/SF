@@ -9,7 +9,7 @@ private class accounttriggerhandlerTest {
         Test.stopTest();
 Account newAccount =[select id,name from account limit 1];
         // Asserts
-        System.assert(newAccount.Name == 'Hello Test Account');
+        System.assert(newAccount.Name == 'Hello Test Account'+' '+ system.Date.today().day());
     }
 
 }
