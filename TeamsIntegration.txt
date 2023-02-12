@@ -1,0 +1,24 @@
+public class TeamsIntegration {
+    public static HttpResponse makeGetRequest(String accessToken, String url) {
+        Http http = new Http();
+        HttpRequest request = new HttpRequest();
+        request.setHeader('Authorization', 'Bearer ' + accessToken);
+        request.setEndpoint(url);
+        request.setMethod('GET');
+        return http.send(request);
+    }
+
+    public static void getTeams() {
+        String accessToken = 'YOUR_ACCESS_TOKEN';
+        String url = 'https://graph.microsoft.com/v1.0/teams';
+        HttpResponse response = makeGetRequest(accessToken, url);
+        if (response.getStatusCode() == 200) {
+            Map<String, Object> result = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
+            List<Object> teams = (List<Object>) result.get('value');
+            for (Object team : teams) {
+                Map<String, Object> teamData = (Map<String, Object>) team;
+                System.debug(teamData.get('displayName'));
+            }
+        }
+    }
+}
