@@ -1,0 +1,90 @@
+/*
+  Community branding overrides for FP Transitions Experience Cloud portal.
+  Update the color tokens and font stacks to match fpinsights.fptransitions.com.
+*/
+:root {
+  --fp-brand-navy: #0b1f2a;
+  --fp-brand-teal: #0b6b75;
+  --fp-brand-sand: #f4efe9;
+  --fp-brand-gold: #c19a5b;
+  --fp-font-sans: 'Inter', 'Salesforce Sans', Arial, sans-serif;
+  --fp-font-serif: 'Merriweather', Georgia, serif;
+}
+
+body,
+.comm-page-custom,
+.comm-theme-layout {
+  font-family: var(--fp-font-sans);
+  color: var(--fp-brand-navy);
+  background-color: var(--fp-brand-sand);
+}
+
+a,
+.comm-navigation__link,
+.slds-text-link {
+  color: var(--fp-brand-teal);
+}
+
+a:hover,
+.comm-navigation__link:hover,
+.slds-text-link:hover {
+  color: var(--fp-brand-navy);
+}
+
+.slds-button_brand,
+.comm-button--primary {
+  background-color: var(--fp-brand-teal);
+  border-color: var(--fp-brand-teal);
+  color: #fff;
+}
+
+.slds-button_brand:hover,
+.comm-button--primary:hover {
+  background-color: var(--fp-brand-navy);
+  border-color: var(--fp-brand-navy);
+}
+
+.slds-button_neutral,
+.comm-button--secondary {
+  border-color: var(--fp-brand-navy);
+  color: var(--fp-brand-navy);
+}
+
+.slds-button_neutral:hover,
+.comm-button--secondary:hover {
+  background-color: rgba(11, 31, 42, 0.08);
+}
+
+/* Hero/section utilities for key landing sections. */
+.fp-hero {
+  background: linear-gradient(135deg, var(--fp-brand-navy), var(--fp-brand-teal));
+  color: #fff;
+  padding: 4rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.fp-hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.fp-hero__title {
+  font-family: var(--fp-font-serif);
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-top: 0.75rem;
+}
+
+.fp-card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.fp-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 12px 32px rgba(11, 31, 42, 0.08);
+}
